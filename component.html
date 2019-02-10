@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Components</title>
+</head>
+<body>
+    
+    <div id="app">
+
+    </div>
+    
+    <script type="text/babel">
+
+    // First root component - return method has only one child element
+    // {} -> use for rendering or computing native JS code
+    class App extends React.Component {
+        render(){
+            return(
+                <div>
+                    <h1>App Component</h1>
+
+                    <First/>
+                    <Second/>
+                    <First/>
+                    <Second/>
+
+                    { Math.random() * 100}
+                </div>
+            );
+        }
+    }
+
+    // Child component -> First
+    class First extends React.Component {
+        render(){
+            return(
+                <div>
+                    <h1>First Component</h1>
+                </div>
+            );
+        }
+    }
+
+    // child component -> Second
+    class Second extends React.Component {
+        render(){
+            return(
+                <div>
+                    <h1>Second Component</h1>
+                </div>
+            );
+        }
+    }
+    
+    ReactDOM.render(<App/>, document.getElementById('app'));
+    </script>
+</body>
+</html>
